@@ -25,7 +25,7 @@ const Stars = () => {
   return (
     <div>
       <div>{starArray}</div>
-      <div className="animated-dots"/>
+      <div className="animated-dots" />
     </div>
   );
 };

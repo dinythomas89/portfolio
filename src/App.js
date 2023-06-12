@@ -1,4 +1,4 @@
-import { Fade, Rotate } from "react-reveal";
+import { Fade } from "react-reveal";
 import "./app.scss";
 import About from "./components/about/About";
 import Header from "./components/header/Header";

@@ -1,7 +1,7 @@
 import "./star.scss";
 
-const Star = ({font}) => {
-  return <div className="star " style={{fontSize:font}}></div>;
+const Star = ({ font }) => {
+  return <div className="star " style={{ fontSize: font }}></div>;
 };
 
 export default Star;

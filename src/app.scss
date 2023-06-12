@@ -22,7 +22,7 @@
   scroll-behavior: smooth;
   transition: transform 3s ease-in-out 3s;
   @include devices(mobile) {
-  scroll-snap-type: none;
+    scroll-snap-type: none;
   }
 }
 
