@@ -1,0 +1,88 @@
+@mixin devices($breakpoint) {
+  @if $breakpoint == tablet {
+    @media (max-width: 900px) {
+      @content;
+    }
+  }
+
+  @if $breakpoint == mobile {
+    @media (max-width: 600px) {
+      @content;
+    }
+  }
+}
+
+.app {
+  background-color: #141416;
+  color: #f0f8ff;
+  position: relative;
+  height: 100vh;
+  overflow-y: scroll;
+  scroll-snap-type: y mandatory;
+  scroll-behavior: smooth;
+  transition: transform 3s ease-in-out 3s;
+  @include devices(mobile) {
+  scroll-snap-type: none;
+  }
+}
+
+.link-tag {
+  text-decoration: none;
+  color: #9b339f;
+  font-weight: 700;
+  position: relative;
+  font-size: 1.2em;
+  @include devices(mobile) {
+    font-size: 1.1em;
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 4px;
+    border-radius: 4px;
+    background-color: #9b339f;
+    bottom: -4px;
+    left: 0;
+    transform-origin: right;
+    transform: scaleX(0);
+    transition: transform 0.3s ease-in-out;
+  }
+
+  &:hover::before {
+    transform-origin: left;
+    transform: scaleX(1);
+  }
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+h2 {
+  font-size: 2.5em;
+  padding: 3% 0;
+  text-align: center;
+  @include devices(mobile) {
+    font-size: 1.8em;
+    padding: 5% 0;
+  }
+}
+
+.para-animation {
+  animation: text-clip 3s cubic-bezier(0.5, 0, 0.1, 1);
+
+  @keyframes text-clip {
+    from {
+      clip-path: polygon(0% 100%, 100% 100%, 100% 100%, 0% 100%);
+    }
+    to {
+      clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    }
+  }
+}

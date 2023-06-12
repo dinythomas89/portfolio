@@ -1,0 +1,113 @@
+@mixin devices($breakpoint) {
+  @if $breakpoint == tablet {
+    @media (max-width: 900px) {
+      @content;
+    }
+  }
+
+  @if $breakpoint == mobile {
+    @media (max-width: 600px) {
+      @content;
+    }
+  }
+}
+
+.about {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0 2%;
+  min-height: 100vh;
+  scroll-snap-align: start;
+
+  & > div {
+    margin: 10%;
+    position: relative;
+    @include devices(mobile) {
+      margin: 10% 0;
+    }
+
+    .about-content {
+      display: flex;
+      justify-content: space-between;
+      @include devices(mobile) {
+        flex-direction: column-reverse;
+      }
+
+      p {
+        max-width: 95%;
+        padding-bottom: 3%;
+        line-height: 1.5em;
+        font-size: 1.1em;
+        @include devices(mobile) {
+          max-width: 100%;
+          line-height: 1.3em;
+          font-size: 0.9em;
+        }
+      }
+    }
+
+    img {
+      width: 250px;
+      height: auto;
+      border-radius: 10px;
+      @include devices(mobile) {
+        width: 60vw;
+        height: 40vh;
+        margin: 0 auto;
+        padding-bottom: 5%;
+      }
+    }
+
+    .image-animation {
+      animation: image-in 1s cubic-bezier(0.5, 0, 0.1, 1) backwards;
+
+      @keyframes image-in {
+        from {
+          clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+        }
+        to {
+          clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+        }
+      }
+    }
+
+    .single-star1 {
+      position: absolute;
+      top: 0%;
+      left: -10%;
+      @include devices(mobile) {
+        visibility: hidden;
+      }
+    }
+
+    .single-star2 {
+      position: absolute;
+      top: 7%;
+      left: -5%;
+      @include devices(mobile) {
+        top: 14%;
+        left: 5%;
+      }
+    }
+
+    .single-star3 {
+      position: absolute;
+      bottom: -20%;
+      left: 50%;
+      @include devices(mobile) {
+        visibility: hidden;
+      }
+    }
+
+    .single-star4 {
+      position: absolute;
+      top: 10%;
+      right: -10%;
+      @include devices(mobile) {
+        visibility: hidden;
+      }
+    }
+  }
+}

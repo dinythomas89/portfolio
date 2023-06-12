@@ -1,0 +1,84 @@
+@mixin devices($breakpoint) {
+  @if $breakpoint == tablet {
+    @media (max-width: 900px) {
+      @content;
+    }
+  }
+
+  @if $breakpoint == mobile {
+    @media (max-width: 600px) {
+      @content;
+    }
+  }
+}
+
+.skills {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0 2%;
+  min-height: 100vh;
+  scroll-snap-align: start;
+
+  & > div {
+    margin: 5%;
+    @include devices(mobile) {
+      margin: 10% 0;
+    }
+
+    .p-container {
+      padding: 0 10%;
+      @include devices(mobile) {
+        padding: 0%;
+      }
+
+      p {
+        padding-bottom: 1%;
+        line-height: 1.5em;
+        font-size: 1.1em;
+        text-align: center;
+        @include devices(mobile) {
+          line-height: 1.3em;
+          font-size: 0.9em;
+        }
+      }
+
+      a {
+        font-size: 1em;
+      }
+    }
+
+    & > div {
+      padding-top: 2%;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 4%;
+      padding: 1% 6%;
+
+      .skills-wrapper {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .logo {
+        font-size: 4em;
+        margin: 4% 0;
+        @include devices(mobile) {
+          font-size: 2em;
+        }
+      }
+
+      .name {
+        margin-bottom: 40%;
+        text-align: center;
+        @include devices(mobile) {
+          margin-bottom: 20%;
+        }
+      }
+    }
+  }
+}

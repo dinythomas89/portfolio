@@ -1,0 +1,48 @@
+.logo {
+    display: flex;
+    justify-content: space-center;
+    align-items: center;
+
+    &:hover {
+      cursor: pointer;
+    }
+
+    .image-wrapper {
+      background-color: #f0f8ff;
+      display: flex;
+      justify-content: space-between;
+      width: 40px;
+      padding: 5%;
+      position: relative;
+
+      .angle-bracket {
+        width: 16px;
+      }
+
+      .line-wrapper {
+        position: absolute;
+        top: 9px;
+        right: 8px;
+
+        .line {
+          width: 12px;
+          height: 24px;
+          font-weight: 900;
+          animation: blink 1.5s steps(3, start) infinite;
+
+          @keyframes blink {
+            to {
+              visibility: hidden;
+            }
+          }
+        }
+      }
+    }
+
+    .text {
+      margin-left: 10px;
+      font-size: 32px;
+      font-weight: 500;
+      letter-spacing: 5px;
+    }
+  }

@@ -1,0 +1,17 @@
+.lSidebar{
+  padding: 4% 6% ;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex: 15%;
+  
+  .github-icon {
+    font-size: 42px;
+    text-decoration: none;
+    color: #f0f8ff;
+    
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}

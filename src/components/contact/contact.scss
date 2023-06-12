@@ -1,0 +1,105 @@
+@mixin devices($breakpoint) {
+  @if $breakpoint == tablet {
+    @media (max-width: 900px) {
+      @content;
+    }
+  }
+
+  @if $breakpoint == mobile {
+    @media (max-width: 600px) {
+      @content;
+    }
+  }
+}
+
+.contact {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0 2%;
+  min-height: 100vh;
+  scroll-snap-align: start;
+
+  & > div {
+    margin: 5%;
+
+    .contact-wrapper {
+      margin-top: -5%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 10%;
+      @include devices(mobile) {
+        margin: 0;
+        flex-direction: column;
+      }
+
+      .contact-details {
+        @include devices(mobile) {
+          margin-top: -15%;
+        }
+        p {
+          padding-bottom: 3%;
+          font-size: 1.1em;
+          @include devices(mobile) {
+            text-align: center;
+            font-size: 0.9em;
+          }
+        }
+
+        .contact-icons {
+          display: flex;
+          margin-top: 3%;
+          gap: 3%;
+          z-index: 10;
+          @include devices(mobile) {
+            justify-content: center;
+            align-items: center;
+          }
+
+          .icons {
+            font-size: 2em;
+            color: #f0f8ff;
+            @include devices(mobile) {
+              font-size: 1.5em;
+            }
+
+            &:hover {
+              cursor: pointer;
+              transform: scale(1.2);
+            }
+          }
+        }
+      }
+
+      .map {
+        background: url(https://cdn.rawgit.com/ManzDev/cursos-assets/gh-pages/css3/earth-2.jpg);
+        background-size: cover;
+        border-radius: 50%;
+        width: 350px;
+        height: 350px;
+        animation: movimiento 15s linear 0s infinite;
+        box-shadow: 0 0 25px RGBA(255, 255, 255, 0.1), -8px -8px 15px #000 inset,
+          2px 2px 25px #000 inset, -45px -45px 25px RGBA(0, 0, 0, 0.5) inset,
+          25px 25px 45px RGBA(0, 0, 0, 0.45) inset;
+        margin: 6em auto;
+        transform: rotateX(6deg) rotateY(6deg) rotateZ(6deg);
+        @include devices(mobile) {
+          width: 200px;
+          height: 200px;
+          margin-top: 4%;
+        }
+
+        @keyframes movimiento {
+          0% {
+            background-position: 0 0;
+          }
+          100% {
+            background-position: 355px 0;
+          }
+        }
+      }
+    }
+  }
+}

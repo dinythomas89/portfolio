@@ -1,0 +1,92 @@
+@mixin devices($breakpoint) {
+  @if $breakpoint == tablet {
+    @media (max-width: 900px) {
+      @content;
+    }
+  }
+
+  @if $breakpoint == mobile {
+    @media (max-width: 600px) {
+      @content;
+    }
+  }
+}
+
+.home {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0 2%;
+  min-height: 100vh;
+  scroll-snap-align: start;
+  @include devices(mobile) {
+    padding: 0 4%;
+  }
+
+  .stars {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+  }
+
+  h1 {
+    white-space: nowrap;
+    overflow: hidden;
+    font-size: 3em;
+    width: 40vw;
+    margin: 3% 0;
+    animation: type 2s steps(20, end) forwards;
+    @include devices(mobile) {
+      font-size: 2em;
+      width: 100%;
+      text-align: center;
+    }
+
+    @keyframes type {
+      0% {
+        width: 0;
+      }
+      1%,
+      99% {
+        border-right: 1px solid #f0f8ff;
+      }
+      100% {
+        border-right: none;
+      }
+    }
+  }
+
+  p {
+    font-size: 1.3em;
+    width: 60%;
+    text-align: center;
+    line-height: 1.5em;
+    padding-bottom: 3%;
+    @include devices(mobile) {
+      font-size: 1.1em;
+      width: 100%;
+      padding-bottom: 7%;
+    }
+  }
+
+  .contact-icons {
+    display: flex;
+    gap: 20px;
+    padding-bottom: 2%;
+    z-index: 10;
+
+    .icons {
+      font-size: 1.5em;
+      color: #f0f8ff;
+
+      &:hover {
+        cursor: pointer;
+        transform: scale(1.2);
+      }
+    }
+  }
+}

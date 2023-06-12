@@ -1,0 +1,79 @@
+@mixin devices($breakpoint) {
+  @if $breakpoint == tablet {
+    @media (max-width: 900px) {
+      @content;
+    }
+  }
+
+  @if $breakpoint == mobile {
+    @media (max-width: 600px) {
+      @content;
+    }
+  }
+}
+
+.header {
+  padding: 4%;
+  overflow: hidden;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 15vh;
+  z-index: 10;
+  @include devices(mobile) {
+    padding: 1%;
+  }
+
+  nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    ul {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      margin-right: 5%;
+
+      li {
+        margin: 0 5%;
+        width: auto;
+        text-align: center;
+        font-weight: 600;
+        position: relative;
+
+        &::before {
+          content: "";
+          position: absolute;
+          width: 100%;
+          height: 4px;
+          border-radius: 4px;
+          background-color: #9b339f;
+          bottom: -4px;
+          left: 0;
+          transform-origin: right;
+          transform: scaleX(0);
+          transition: transform 0.3s ease-in-out;
+        }
+
+        &:hover::before {
+          transform-origin: left;
+          transform: scaleX(1);
+        }
+
+        a {
+          font-size: large;
+          color: #f0f8ff;
+
+          &:hover {
+            color: #9b339f;
+          }
+        }
+      }
+    }
+
+    a {
+      color: #f0f8ff;
+    }
+  }
+}
