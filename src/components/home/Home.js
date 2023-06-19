@@ -3,6 +3,8 @@ import { FaGithub, FaLinkedinIn } from "react-icons/fa";
 import "./home.scss";
 import Stars from "../animations/stars/Stars";
 import ShootingStars from "../animations/shootingStars/ShootingStars";
+import astronaut from "../../assests/astronaut.png";
+// import jupiter from "../../assests/jupiter.png";
 
 const Home = () => {
   return (
@@ -10,6 +12,9 @@ const Home = () => {
       <div className="stars">
         <Stars />
         <ShootingStars />
+        <img className="astronaut" src={astronaut} alt="astronaut" />
+        {/* <img className="jupiter" src={jupiter} alt="planet"/> */}
+        <div className="earth"></div>
       </div>
 
       <h1>Hey, I'm Diny Thomas</h1>

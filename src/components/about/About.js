@@ -1,25 +1,29 @@
 import { BsEmojiWinkFill } from "react-icons/bs";
-import { Zoom } from "react-reveal";
 import "./about.scss";
-import myImage from "../../assests/myImage.jpeg";
 import AnimatedElement from "../AnimatedElement";
-import Star from "../animations/star/Star";
+import myImage from "../../assests/myImage.jpeg";
+import ClickHere from "../animations/clickHere/ClickHere";
 
 const About = () => {
   return (
     <div className="about" id="about">
+      <h3>Get to know me!</h3>
       <div>
-        <h2>Get to know me!</h2>
-        <div className="about-content">
-          <div>
+        <div className="click-here-wrapper">
+          <ClickHere />
+        </div>
+        <div className="card">
+          <div className="imgBox">
+            <img src={myImage} alt="" />
+          </div>
+          <div className="details">
             <AnimatedElement animationClass="para-animation">
               <p>
                 I am a Frontend focused Full Stack Web Developer with a
                 Bachelor's degree in computer science, living in Denmark for the
-                past 9 years. With a passion for exploring, building, testing
-                and maintaining simple and accessible user experiences, I look
-                for ways to create tangible impact while learning throughout the
-                process.
+                past 9 years. I enjoy finding solutions to problems, taking deep
+                dives into the how/why things work, and continuously improving
+                my skills.
               </p>
               <p>
                 In my free time, I enjoy music (great singer too, if no one is
@@ -35,26 +39,9 @@ const About = () => {
                 experience then don't hesitate to contact me.
               </p>
             </AnimatedElement>
-            <a className="link-tag" href="#contact">
-              Contact
-            </a>
           </div>
-          <Zoom delay={1000}>
-            <img src={myImage} alt="/" loading="lazy" />
-          </Zoom>
         </div>
-        {/* <div className="single-star1">
-          <Star font=".5em" />
-        </div>
-        <div className="single-star2">
-          <Star font=".8em" />
-        </div>
-        <div className="single-star3">
-          <Star font="1.6em" />
-        </div>
-        <div className="single-star4">
-          <Star font=".7em" />
-        </div> */}
+        {/* <div className="earth"></div> */}
       </div>
     </div>
   );

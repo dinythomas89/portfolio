@@ -1,11 +1,11 @@
 import { Fade } from "react-reveal";
 import "./app.scss";
-import About from "./components/about/About";
 import Header from "./components/header/Header";
 import Home from "./components/home/Home";
 import Skills from "./components/skills/Skills";
 import Projects from "./components/projects/Projects";
 import Contact from "./components/contact/Contact";
+import About from "./components/about/About";
 
 const App = () => {
   return (

@@ -35,7 +35,6 @@ $shadows-medium: multiple-box-shadow(200);
   border-radius: 50%;
   background: transparent;
   box-shadow: $shadows-medium;
-  animation: animStar 150s linear infinite;
 
   &:after {
     content: " ";

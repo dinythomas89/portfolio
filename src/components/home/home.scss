@@ -20,6 +20,7 @@
   padding: 0 2%;
   min-height: 100vh;
   scroll-snap-align: start;
+  position: relative;
   @include devices(mobile) {
     padding: 0 4%;
   }
@@ -31,6 +32,70 @@
     width: 100%;
     height: 100%;
     overflow: hidden;
+
+    .astronaut {
+      width: 80px;
+      position: absolute;
+      bottom: 12%;
+      right: 8%;
+      animation: bounce 3s alternate-reverse infinite;
+
+      @keyframes bounce {
+        from {
+          transform: translate3d(0, 0, 0);
+        }
+        to {
+          transform: translate3d(20px, 20px, 0);
+        }
+      }
+    }
+
+    .jupiter {
+      border-radius: 100px;
+      width: 110px;
+      height: 110px;
+      position: absolute;
+      bottom: 22%;
+      left: 8%;
+      animation: jupiterAni 30s linear infinite;
+
+      @keyframes jupiterAni {
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+    }
+
+    .earth {
+      background: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRXg7aebFOOoCjZ14ZT0vuEroHPxtVzYNZJfg&usqp=CAU);
+      background-size: cover;
+      border-radius: 50%;
+      width: 100px;
+      height: 100px;
+      position: absolute;
+      bottom: 8%;
+      left: 8%;
+      animation: earthAni 15s linear infinite;
+      box-shadow: 0 0 25px RGBA(255, 255, 255, 0.1), -8px -8px 15px #000 inset,
+        2px 2px 25px #000 inset, -45px -45px 25px RGBA(0, 0, 0, 0.5) inset,
+        25px 25px 45px RGBA(0, 0, 0, 0.45) inset;
+      margin: 6em auto;
+      transform: rotateX(6deg) rotateY(6deg) rotateZ(6deg);
+      @include devices(mobile) {
+        width: 10px;
+        height: 10px;
+        margin-top: 4%;
+      }
+
+      @keyframes earthAni {
+        0% {
+          background-position: 0 0;
+        }
+        100% {
+          background-position: 355px 0;
+        }
+      }
+    }
   }
 
   h1 {

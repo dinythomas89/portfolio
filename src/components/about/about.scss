@@ -15,98 +15,136 @@
 .about {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
   padding: 0 2%;
+  width: 100vw;
   min-height: 100vh;
   scroll-snap-align: start;
 
+  h3 {
+    text-align: center;
+    font-size: 2em;
+    margin-top: 5%;
+  }
+
   & > div {
-    margin: 10%;
-    position: relative;
+    display: flex;
+    justify-content: flex-start;
     @include devices(mobile) {
       margin: 10% 0;
     }
 
-    .about-content {
-      display: flex;
-      justify-content: space-between;
-      @include devices(mobile) {
-        flex-direction: column-reverse;
-      }
-
-      p {
-        max-width: 95%;
-        padding-bottom: 3%;
-        line-height: 1.5em;
-        font-size: 1.1em;
-        @include devices(mobile) {
-          max-width: 100%;
-          line-height: 1.3em;
-          font-size: 0.9em;
-        }
-      }
-    }
-
-    img {
-      width: 250px;
-      height: auto;
-      border-radius: 10px;
-      @include devices(mobile) {
-        width: 60vw;
-        height: 40vh;
-        margin: 0 auto;
-        padding-bottom: 5%;
-      }
-    }
-
-    .image-animation {
-      animation: image-in 1s cubic-bezier(0.5, 0, 0.1, 1) backwards;
-
-      @keyframes image-in {
-        from {
-          clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
-        }
-        to {
-          clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
-        }
-      }
-    }
-
-    .single-star1 {
+    .click-here-wrapper {
       position: absolute;
-      top: 0%;
-      left: -10%;
+      top: 50%;
+      left: 23%;
       @include devices(mobile) {
         visibility: hidden;
       }
     }
 
-    .single-star2 {
+    .card {
+      font-family: "Sriracha", cursive;
+      width: 330px;
+      height: 400px;
       position: absolute;
-      top: 7%;
-      left: -5%;
-      @include devices(mobile) {
-        top: 14%;
-        left: 5%;
-      }
-    }
-
-    .single-star3 {
-      position: absolute;
-      bottom: -20%;
+      top: 55%;
       left: 50%;
-      @include devices(mobile) {
-        visibility: hidden;
+      transform: translate(-50%, -50%);
+      background: #141416;
+      transform-style: preserve-3d;
+      box-shadow: inset 300px 0 50px #f0f8ff;
+      transition: 1s;
+
+      &:hover {
+        transform: translate(-50%, -50%) perspective(2000px) rotate(-10deg);
+        box-shadow: inset 20px 0 50px rgba(0, 0, 0, 0.5),
+          0 10px 100px rgba(0, 0, 0, 0.5);
+      }
+
+      &:hover .imgBox {
+        transform: rotateY(-125deg);
+      }
+
+      &::before {
+        content: "";
+        position: absolute;
+        top: -5px;
+        left: 0;
+        width: 100%;
+        height: 5px;
+        background: #9b339f;
+        transform-origin: bottom;
+        transform: skewX(-45deg);
+      }
+
+      &::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        right: -5px;
+        width: 5px;
+        height: 100%;
+        background: #9b339f;
+        transform-origin: left;
+        transform: skewY(-45deg);
+      }
+
+      .imgBox {
+        width: 100%;
+        height: 100%;
+        position: relative;
+        transform-origin: left;
+        transition: 1s cubic-bezier(0.15, 1.7, 0.84, 0.58);
+
+        img {
+          height: 100%;
+          width: 100%;
+        }
+      }
+
+      .details {
+        position: absolute;
+        top: 0;
+        left: 0;
+        padding: 20px;
+        z-index: -1;
+
+        p {
+          padding-bottom: 5%;
+          font-size: 0.95em;
+          line-height: 1.5em;
+        }
       }
     }
 
-    .single-star4 {
+    .earth {
+      background: url(https://media.istockphoto.com/id/1203191150/vector/world-map-outline-illustration-as-image.jpg?s=612x612&w=0&k=20&c=6pmXP3vtmWJhP_ZZSHlhUhNGtW76QGYgGP9Qp55aPGU=);
+      background-size: cover;
+      border-radius: 50%;
+      width: 100px;
+      height: 100px;
       position: absolute;
-      top: 10%;
-      right: -10%;
+      top: 55%;
+      right: 10%;
+      animation: earthAni 15s linear infinite;
+      box-shadow: 0 0 25px RGBA(255, 255, 255, 0.1), -8px -8px 15px #000 inset,
+        2px 2px 25px #000 inset, -45px -45px 25px RGBA(0, 0, 0, 0.5) inset,
+        25px 25px 45px RGBA(0, 0, 0, 0.45) inset;
+      margin: 6em auto;
+      transform: rotateX(6deg) rotateY(6deg) rotateZ(6deg);
       @include devices(mobile) {
-        visibility: hidden;
+        width: 10px;
+        height: 10px;
+        margin-top: 4%;
+      }
+
+      @keyframes earthAni {
+        0% {
+          background-position: 0 0;
+        }
+        100% {
+          background-position: 355px 0;
+        }
       }
     }
   }
