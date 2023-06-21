@@ -21,7 +21,7 @@
   height: 15vh;
   z-index: 10;
   @include devices(mobile) {
-    padding: 1%;
+    padding: 4% 2%;
   }
 
   nav {
@@ -68,12 +68,94 @@
           &:hover {
             color: #9b339f;
           }
+          @include devices(tablet) {
+            display: none;
+          }
         }
       }
     }
 
-    a {
-      color: #f0f8ff;
+    .menu {
+      display: none;
+      @include devices(tablet) {
+        display: block;
+        font-size: 36px;
+        margin-right: 5%;
+      }
+      @include devices(mobile) {
+        display: block;
+        font-size: 32px;
+        margin-right: 4%;
+      }
     }
+  }
+
+  .sidebar-menu {
+    position: fixed;
+    top: 0px;
+    left: 0;
+    z-index: 100;
+    width: 100vw;
+    height: 100vh;
+    background: #282828;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    gap: 10%;
+    padding: 5%;
+
+    .close-button {
+      font-size: 1.8em;
+      align-self: flex-end;
+      &:hover {
+        cursor: pointer;
+      }
+    }
+
+    ul {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      
+      li {
+        width: max-content;
+        &:hover {
+          cursor: pointer;
+        }
+
+        a {
+          font-size: 1.5em;
+        }
+      }
+    }
+
+    
+
+    .icons {
+      display: flex;
+      gap: 3%;
+      &:hover {
+        cursor: pointer;
+      }
+
+      a {
+        font-size: 1.3em;
+      }
+    }
+
+    .resume {
+      font-size: 1.3em;
+      padding: 3%;
+      border: 0.5px solid rgb(73, 73, 73);
+      border-radius: 10px;
+      width: max-content;
+      &:hover {
+        cursor: pointer;
+      }
+    }
+  }
+
+  a {
+    color: #f0f8ff;
   }
 }

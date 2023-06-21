@@ -1,4 +1,4 @@
-@function multiple-box-shadow($n) {
+@function create-stars($n) {
   $value: "#{random(2000)}px #{random(20000)}px #FFF";
   @for $i from 2 through $n {
     $value: "#{$value}, #{random(2000)}px #{random(2000)}px #FFF";
@@ -6,8 +6,8 @@
   @return unquote($value);
 }
 
-$shadows-small: multiple-box-shadow(700);
-$shadows-medium: multiple-box-shadow(200);
+$shadows-small: create-stars(700);
+$shadows-medium: create-stars(200);
 
 .animated-dots {
   width: 1px;
