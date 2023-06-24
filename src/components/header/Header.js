@@ -4,8 +4,13 @@ import "./header.scss";
 import Logo from "../logo/Logo";
 import { useState } from "react";
 
-const Header = () => {
+const Header = ({ activeSection, onNavLinkClick }) => {
   const [menu, setMenu] = useState(false);
+  const [activeLink, setActiveLink] = useState("");
+
+  const handleNavLinkClick = (link) => {
+    setActiveLink(link);
+  };
 
   const toggleMenu = () => {
     setMenu(!menu);
@@ -18,17 +23,25 @@ const Header = () => {
           <Logo />
         </a>
         <ul>
-          <li>
-            <a href="#about">About</a>
+          <li className={activeLink === "about" ? "active" : ""}>
+            <a href="#about" onClick={() => handleNavLinkClick("about")}>
+              About
+            </a>
           </li>
-          <li>
-            <a href="#skills">Skills</a>
+          <li className={activeLink === "skills" ? "active" : ""}>
+            <a href="#skills" onClick={() => handleNavLinkClick("skills")}>
+              Skills
+            </a>
           </li>
-          <li>
-            <a href="#projects">Projects</a>
+          <li className={activeLink === "projects" ? "active" : ""}>
+            <a href="#projects" onClick={() => handleNavLinkClick("projects")}>
+              Projects
+            </a>
           </li>
-          <li>
-            <a href="#contact">Contact</a>
+          <li className={activeLink === "contact" ? "active" : ""}>
+            <a href="#contact" onClick={() => handleNavLinkClick("contact")}>
+              Contact
+            </a>
           </li>
         </ul>
         <div onClick={() => setMenu(true)} className="menu">

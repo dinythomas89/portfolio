@@ -75,6 +75,10 @@
       }
     }
 
+    .active > a {
+      color: #9b339f;
+    }
+
     .menu {
       display: none;
       @include devices(tablet) {
@@ -116,7 +120,7 @@
       display: flex;
       flex-direction: column;
       gap: 20px;
-      
+
       li {
         width: max-content;
         &:hover {
@@ -128,8 +132,6 @@
         }
       }
     }
-
-    
 
     .icons {
       display: flex;
