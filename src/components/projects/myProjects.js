@@ -1,5 +1,5 @@
 import artGalleria from "../../assests/artGallery.png";
-import todo from "../../assests/todo.png";
+import photoGallery from "../../assests/nextjs.png";
 import mealSharing from "../../assests/mealSharing.png";
 import rediTalentPool from "../../assests/rediTalentPool.png";
 
@@ -15,13 +15,13 @@ export const myProjects = [
       "An art gallery where you can find the masterpieces of famous paintors",
   },
   {
-    name: "ToDo list",
+    name: "Photo Gallery",
     delay: "1000",
-    link: "https://github.com/dinythomas89/todo-list",
+    link: "https://github.com/dinythomas89/YourPhotos",
     live: "https://dinythomas89.github.io/todo-list/",
     stacks: "React, CSS",
-    image: todo,
-    description: "A simple react app to add, update and delete todos.",
+    image: photoGallery,
+    description: "A simple next.js 13.4 app to display user profile.",
   },
   {
     name: "Meal-Sharing",
