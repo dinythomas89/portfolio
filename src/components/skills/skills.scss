@@ -21,6 +21,15 @@
   min-height: 100vh;
   scroll-snap-align: start;
 
+  .stars {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+  }
+
   & > div {
     margin: 5%;
     @include devices(mobile) {

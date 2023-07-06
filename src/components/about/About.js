@@ -3,10 +3,17 @@ import "./about.scss";
 import AnimatedElement from "../AnimatedElement";
 import myImage from "../../assests/myImage.jpeg";
 import ClickHere from "../animations/clickHere/ClickHere";
+import backgroundEarth from "../../assests/earth2.png";
+import earthImage from "../../assests/earth3.png";
+import satellite from "../../assests/satellite2.png";
 
 const About = () => {
   return (
-    <div className="about" id="about">
+    <div
+      className="about"
+      id="about"
+      style={{ backgroundImage: `url(${backgroundEarth})` }}
+    >
       <h3>Get to know me!</h3>
       <div>
         <div className="click-here-wrapper">
@@ -42,6 +49,12 @@ const About = () => {
           </div>
         </div>
         {/* <div className="earth"></div> */}
+      </div>
+      <div className="earth-image">
+        <img src={earthImage} />
+      </div>
+      <div className="satellite">
+        <img src={satellite} />
       </div>
     </div>
   );

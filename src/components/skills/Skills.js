@@ -2,11 +2,15 @@ import { Fade } from "react-reveal";
 import AnimatedElement from "../AnimatedElement";
 import { mySkills } from "./mySkills";
 import "./skills.scss";
+import Stars from "../animations/stars/Stars";
 
 const Skills = () => {
   return (
     <div id="skills" className="skills">
       <div>
+        <div className="stars">
+          <Stars />
+        </div>
         <h2>What I can do!</h2>
         <AnimatedElement animationClass="para-animation">
           <div className="p-container">

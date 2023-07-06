@@ -19,6 +19,8 @@
   width: 100vw;
   min-height: 100vh;
   scroll-snap-align: start;
+  background-repeat: no-repeat;
+  background-size: 100vw;
 
   h3 {
     text-align: center;
@@ -144,6 +146,35 @@
         }
         100% {
           background-position: 355px 0;
+        }
+      }
+    }
+  }
+
+  .earth-image {
+    img {
+      position: absolute;
+      bottom: 33%;
+      right: 15%;
+      width: 150px;
+      height: 150px;
+    }
+  }
+
+  .satellite {
+    img {
+      position: absolute;
+      bottom: 40%;
+      left: 50px;
+      width: 70px;
+      animation: bounce 3s alternate-reverse infinite;
+
+      @keyframes bounce {
+        from {
+          transform: translate3d(0, 0, 0);
+        }
+        to {
+          transform: translate3d(20px, 20px, 0);
         }
       }
     }

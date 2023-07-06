@@ -21,6 +21,14 @@
   min-height: 100vh;
   scroll-snap-align: start;
   position: relative;
+  background: linear-gradient(
+    to bottom right,
+    #141416,
+    #141416 25%,
+    #0e1d22 50%,
+    #141416 75%,
+    #141416
+  );
   @include devices(mobile) {
     padding: 0 4%;
   }

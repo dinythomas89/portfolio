@@ -4,7 +4,6 @@ import "./home.scss";
 import Stars from "../animations/stars/Stars";
 import ShootingStars from "../animations/shootingStars/ShootingStars";
 import astronaut from "../../assests/astronaut.png";
-// import jupiter from "../../assests/jupiter.png";
 
 const Home = () => {
   return (
@@ -13,10 +12,8 @@ const Home = () => {
         <Stars />
         <ShootingStars />
         <img className="astronaut" src={astronaut} alt="astronaut" />
-        {/* <img className="jupiter" src={jupiter} alt="planet"/> */}
         <div className="earth"></div>
       </div>
-
       <h1>Hey, I'm Diny Thomas</h1>
       <p className="para-animation">
         A Frontend focused Web Developer specializing in creating engaging user
