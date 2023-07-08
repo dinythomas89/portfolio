@@ -20,18 +20,7 @@
   padding: 0 2%;
   min-height: 100vh;
   scroll-snap-align: start;
-  background-repeat: no-repeat;
-  background-size: 100vw;
-
-  &::before{
-    content: "";
-    position: absolute;
-    top: 0px;
-    right: 0px;
-    bottom: 0px;
-    left: 0px;
-    background-color: rgba(0,0,0,0.5);
-  }
+  background: linear-gradient(to bottom left, #141616 0%,#141616 30%, rgb(30, 34, 37) 60%, #141416 100%);
 
   & > div {
     margin: 5%;
@@ -175,24 +164,6 @@
           transition-delay: 0s;
         }
       }
-    }
-  }
-
-  .jupiter {
-    img {
-      position: absolute;
-      top: 18%;
-      left: 5%;
-      width: 90px;
-    }
-  }
-
-  .rocket {
-    img {
-      position: absolute;
-      top: 50%;
-      right: 10%;
-      width: 50px;
     }
   }
 }
