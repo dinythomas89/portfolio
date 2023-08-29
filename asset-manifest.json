@@ -1,23 +1,20 @@
 {
   "files": {
-    "main.css": "/portfolio/static/css/main.e178fa86.css",
-    "main.js": "/portfolio/static/js/main.7f2af351.js",
-    "static/media/universe.png": "/portfolio/static/media/universe.de618d66b2a750310d37.png",
+    "main.css": "/portfolio/static/css/main.c27894ac.css",
+    "main.js": "/portfolio/static/js/main.77e6a9b0.js",
     "static/media/mealSharing.png": "/portfolio/static/media/mealSharing.d854af068c781becc044.png",
     "static/media/earth2.png": "/portfolio/static/media/earth2.70d60915856a54664685.png",
     "static/media/artGallery.png": "/portfolio/static/media/artGallery.06f0afc46d6ffc65eee1.png",
-    "static/media/earth3.png": "/portfolio/static/media/earth3.ef1c6eb00d44514d1275.png",
     "static/media/nextjs.png": "/portfolio/static/media/nextjs.1ac25067c41b56bfef94.png",
     "static/media/astronaut.png": "/portfolio/static/media/astronaut.23d49f0ba30c693fc147.png",
     "static/media/rediTalentPool.png": "/portfolio/static/media/rediTalentPool.d43e1bdbadfbcfb4a563.png",
-    "static/media/myImage.jpeg": "/portfolio/static/media/myImage.e7d17bc3d961fe389d0d.jpeg",
-    "static/media/satellite2.png": "/portfolio/static/media/satellite2.80ccdfd43496d1c608c1.png",
+    "static/media/Diny.png": "/portfolio/static/media/Diny.b905c872bee63197dce8.png",
     "index.html": "/portfolio/index.html",
-    "main.e178fa86.css.map": "/portfolio/static/css/main.e178fa86.css.map",
-    "main.7f2af351.js.map": "/portfolio/static/js/main.7f2af351.js.map"
+    "main.c27894ac.css.map": "/portfolio/static/css/main.c27894ac.css.map",
+    "main.77e6a9b0.js.map": "/portfolio/static/js/main.77e6a9b0.js.map"
   },
   "entrypoints": [
-    "static/css/main.e178fa86.css",
-    "static/js/main.7f2af351.js"
+    "static/css/main.c27894ac.css",
+    "static/js/main.77e6a9b0.js"
   ]
 }
