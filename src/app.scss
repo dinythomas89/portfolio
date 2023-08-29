@@ -75,11 +75,11 @@ h2 {
 }
 
 .para-animation {
-  animation: text-clip 3s cubic-bezier(0.5, 0, 0.1, 1);
+  animation: text-clip 5s cubic-bezier(0.5, 0, 0.1, 1) forwards;
 
   @keyframes text-clip {
     from {
-      clip-path: polygon(0% 100%, 100% 100%, 100% 100%, 0% 100%);
+      clip-path: polygon(0 0, 100% 0, 100% 0, 0% 0);
     }
     to {
       clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);

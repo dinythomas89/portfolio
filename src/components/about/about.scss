@@ -14,168 +14,43 @@
 
 .about {
   display: flex;
-  flex-direction: column;
-  padding: 0 2%;
   width: 100vw;
   min-height: 100vh;
   scroll-snap-align: start;
   background-repeat: no-repeat;
   background-size: 100vw;
 
-  h3 {
-    text-align: center;
-    font-size: 2em;
-    margin-top: 15%;
-  }
-
   & > div {
+    margin: 10% 5% 5%;
+    padding: 3%;
     display: flex;
-    justify-content: flex-start;
-    @include devices(mobile) {
-      margin: 10% 0;
-    }
+    justify-content: center;
+    align-items: center;
+    background: rgba(43, 40, 40, 0.5);
+    border-radius: 10px;
 
-    .click-here-wrapper {
-      position: absolute;
-      top: 50%;
-      left: 23%;
-      @include devices(mobile) {
-        visibility: hidden;
+    .left {
+      min-width: 55%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+
+      p{
+        padding-bottom: 2%;
+        line-height: 1.2;
       }
     }
 
-    .card {
-      font-family: "Sriracha", cursive;
-      width: 330px;
-      height: 400px;
-      position: absolute;
-      top: 55%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      background: #141416;
-      transform-style: preserve-3d;
-      box-shadow: inset 300px 0 50px #f0f8ff;
-      transition: 1s;
+    .right {
+      right: 40%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
 
-      &:hover {
-        transform: translate(-50%, -50%) perspective(2000px) rotate(-10deg);
-        box-shadow: inset 20px 0 50px rgba(0, 0, 0, 0.5),
-          0 10px 100px rgba(0, 0, 0, 0.5);
-      }
-
-      &:hover .imgBox {
-        transform: rotateY(-125deg);
-      }
-
-      &::before {
-        content: "";
-        position: absolute;
-        top: -5px;
-        left: 0;
-        width: 100%;
-        height: 5px;
-        background: #9b339f;
-        transform-origin: bottom;
-        transform: skewX(-45deg);
-      }
-
-      &::after {
-        content: "";
-        position: absolute;
-        top: 0;
-        right: -5px;
-        width: 5px;
-        height: 100%;
-        background: #9b339f;
-        transform-origin: left;
-        transform: skewY(-45deg);
-      }
-
-      .imgBox {
-        width: 100%;
-        height: 100%;
-        position: relative;
-        transform-origin: left;
-        transition: 1s cubic-bezier(0.15, 1.7, 0.84, 0.58);
-
-        img {
-          height: 100%;
-          width: 100%;
-        }
-      }
-
-      .details {
-        position: absolute;
-        top: 0;
-        left: 0;
-        padding: 20px;
-        z-index: -1;
-
-        p {
-          padding-bottom: 5%;
-          font-size: 0.95em;
-          line-height: 1.5em;
-        }
-      }
-    }
-
-    .earth {
-      background: url(https://media.istockphoto.com/id/1203191150/vector/world-map-outline-illustration-as-image.jpg?s=612x612&w=0&k=20&c=6pmXP3vtmWJhP_ZZSHlhUhNGtW76QGYgGP9Qp55aPGU=);
-      background-size: cover;
-      border-radius: 50%;
-      width: 100px;
-      height: 100px;
-      position: absolute;
-      top: 55%;
-      right: 10%;
-      animation: earthAni 15s linear infinite;
-      box-shadow: 0 0 25px RGBA(255, 255, 255, 0.1), -8px -8px 15px #000 inset,
-        2px 2px 25px #000 inset, -45px -45px 25px RGBA(0, 0, 0, 0.5) inset,
-        25px 25px 45px RGBA(0, 0, 0, 0.45) inset;
-      margin: 6em auto;
-      transform: rotateX(6deg) rotateY(6deg) rotateZ(6deg);
-      @include devices(mobile) {
-        width: 10px;
-        height: 10px;
-        margin-top: 4%;
-      }
-
-      @keyframes earthAni {
-        0% {
-          background-position: 0 0;
-        }
-        100% {
-          background-position: 355px 0;
-        }
-      }
-    }
-  }
-
-  .earth-image {
-    img {
-      position: absolute;
-      bottom: 33%;
-      right: 15%;
-      width: 150px;
-      height: 150px;
-    }
-  }
-
-  .satellite {
-    img {
-      position: absolute;
-      bottom: 40%;
-      left: 50px;
-      width: 70px;
-      animation: bounce 3s alternate-reverse infinite;
-
-      @keyframes bounce {
-        from {
-          transform: translate3d(0, 0, 0);
-        }
-        to {
-          transform: translate3d(20px, 20px, 0);
-        }
+      img {
+        width: 60%;
+        height: 90%;
+        border-radius: 10px;
       }
     }
   }
